@@ -3,24 +3,73 @@
 //Import di Classi Java necessarie al funzionamento del programma
 import java.util.Scanner;
 
-// Classe principale, con metodo main
 class Esercizio {
-    // Il programma parte con una chiamata a main().
-    public static void main(String args[])
-    {
-        //Variabili del programma
-        String nome;
-
-        //Creo l'oggetto in per l'input da tastiera
-        Scanner in = new Scanner( System.in );
-
-        //Leggo l'input da tastiera
-        System.out.print("Inserisci il tuo nome: ");
-        nome = in.nextLine();
-
-        //Output del nome acquisito da tastiera
-        System.out.println("Ciao "+nome+"!");
+    class Nodo{
+        T dato;
+        Nodo <T> next;
     }
-}
 
-//LEGGERE LE ISTRUZIONI NEL FILE README.md
+    public Nodo <T>(T dato){
+        this.dato=dato;
+        this.next=null;
+    }
+
+    class Pila <T> {
+        private Nodo<T> top;
+        public Pila (){
+            this.top=null;
+        } 
+    }
+
+    
+
+
+
+    public void push (T dato){
+        Nodo<T> nuovoNodo=new Nodo (dato);
+        nuovoNodo=top;
+        top=nuovoNodo;
+    }
+
+    public T pop (){
+        if(top==null){
+            throw.newNoSuchElementException("La pila è vuota");
+        }
+        T dato=top.dato;
+        top=top.next;
+        return dato;
+    }
+
+    public T peak(T dato){
+        if (top==null){
+            throw.newNoSuchElementException("La pila è vuota");
+        }
+        T dato=top.dato;
+        return dato;
+    }
+
+    public boolean isEmpty(){
+        return (top==null);
+    }
+
+    public int size(){
+        curr=0;
+        Nodo<T>current=top;
+        while (current!=null){
+            current=current.next;
+            ++curr;
+        }
+        return curr;
+    }
+
+    Public String toString(){
+        String str="[";
+        Nodo<T> current=top;
+        while (current.next !=null){
+            current=current.next;
+            str+=curr.dato;
+        }
+
+        str="]";
+
+    }
