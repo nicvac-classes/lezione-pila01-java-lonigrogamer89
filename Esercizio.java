@@ -72,4 +72,26 @@ class Esercizio {
 
         str="]";
 
+    Public boolean corrispondente(char ap,char ch){
+        return (ap ='(' && ch == ')') || (ap= '[' && ch==']') || (ap=='{' && ch == '}');
+
+    }
+
+    Public boolean parentesiBilanciate(string patentesi){
+        for (int i=0;i<parentesi.lenght()){
+            Char curr=parentesi.charAt(i);
+            if(e=='{'|| e '['|| e=='(' ){
+                pila.push(c);
+            }else{
+                if(pila.isEmpty()){
+                    char K=pila.pop();
+                }
+                if(corrispondente(k,c)){
+                    return false;
+                }
+            }
+        }
+    return pila.isEmpty();   
+    }
+
     }
